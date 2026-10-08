@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#f3f5ed" />
+		<title>Webtech — oefeningen</title>
+		<style>
+			:root {
+				color-scheme: light;
+				--paper: #f3f5ed;
+				--ink: #17251f;
+				--muted: #64736b;
+				--line: #d7ded5;
+				--green: #c8f169;
+				--orange: #ef7655;
+				--blue: #4a91a0;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			html {
+				scroll-behavior: smooth;
+				scroll-padding-top: 1.5rem;
+			}
+
+			body {
+				margin: 0;
+				background-color: var(--paper);
+				background-image: radial-gradient(#c9d3c9 0.7px, transparent 0.7px);
+				background-size: 16px 16px;
+				color: var(--ink);
+				font-family: "Avenir Next", Avenir, "Trebuchet MS", sans-serif;
+				line-height: 1.5;
+			}
+
+			a {
+				color: inherit;
+			}
+
+			a:focus-visible {
+				outline: 3px solid var(--blue);
+				outline-offset: 4px;
+			}
+
+			.page-shell {
+				width: min(100% - 40px, 1120px);
+				margin-inline: auto;
+			}
+
+			.masthead {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				min-height: 76px;
+				border-bottom: 1px solid var(--line);
+			}
+
+			.wordmark {
+				display: inline-flex;
+				align-items: center;
+				gap: 10px;
+				font-size: 0.82rem;
+				font-weight: 800;
+				text-decoration: none;
+				text-transform: uppercase;
+			}
+
+			.mark {
+				display: grid;
+				width: 30px;
+				aspect-ratio: 1;
+				place-items: center;
+				background: var(--green);
+				border: 1px solid var(--ink);
+				font-size: 0.9rem;
+			}
+
+			.masthead-note {
+				color: var(--muted);
+				font-size: 0.78rem;
+			}
+
+			.intro {
+				display: grid;
+				grid-template-columns: minmax(0, 1fr) auto;
+				align-items: end;
+				gap: 2rem;
+				padding-block: clamp(2.5rem, 7vw, 5rem) 2.25rem;
+			}
+
+			.eyebrow {
+				margin: 0 0 0.7rem;
+				color: var(--muted);
+				font-size: 0.75rem;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+
+			h1,
+			h2,
+			p {
+				margin-top: 0;
+			}
+
+			h1 {
+				max-width: 650px;
+				margin-bottom: 0.8rem;
+				font-family: Georgia, "Times New Roman", serif;
+				font-size: clamp(3rem, 8vw, 6rem);
+				font-weight: 500;
+				line-height: 0.95;
+			}
+
+			.intro-copy {
+				max-width: 480px;
+				margin-bottom: 0;
+				color: var(--muted);
+				font-size: 1rem;
+			}
+
+			.quick-nav {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				padding: 8px;
+				border: 1px solid var(--line);
+				background: var(--paper);
+			}
+
+			.quick-nav a {
+				min-width: 44px;
+				padding: 8px 10px;
+				font-size: 0.78rem;
+				font-weight: 700;
+				text-align: center;
+				text-decoration: none;
+			}
+
+			.quick-nav a:hover {
+				background: var(--green);
+			}
+
+			.lab-list {
+				display: grid;
+				gap: 14px;
+				padding-bottom: 4rem;
+			}
+
+			.lab {
+				display: grid;
+				grid-template-columns: 108px minmax(0, 1fr);
+				border: 1px solid var(--ink);
+				background: var(--paper);
+				animation: arrive 450ms both;
+			}
+
+			.lab:nth-child(2) {
+				animation-delay: 80ms;
+			}
+
+			.lab:nth-child(3) {
+				animation-delay: 160ms;
+			}
+
+			.lab-index {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 0.3rem;
+				padding: 1rem;
+				border-right: 1px solid var(--ink);
+				background: var(--green);
+			}
+
+			.lab:nth-child(2) .lab-index {
+				background: #f4ad76;
+			}
+
+			.lab:nth-child(3) .lab-index {
+				background: #9bd4d0;
+			}
+
+			.lab-index span:first-child {
+				font-family: Georgia, "Times New Roman", serif;
+				font-size: 2rem;
+				line-height: 1;
+			}
+
+			.lab-index span:last-child {
+				font-size: 0.68rem;
+				font-weight: 800;
+				text-transform: uppercase;
+			}
+
+			.lab-content {
+				min-width: 0;
+				padding: clamp(1.15rem, 3vw, 1.8rem);
+			}
+
+			.lab-heading {
+				display: flex;
+				align-items: baseline;
+				justify-content: space-between;
+				gap: 1rem;
+				margin-bottom: 1rem;
+			}
+
+			.lab-heading h2 {
+				margin-bottom: 0;
+				font-family: Georgia, "Times New Roman", serif;
+				font-size: 1.55rem;
+				font-weight: 500;
+			}
+
+			.count {
+				flex: 0 0 auto;
+				color: var(--muted);
+				font-size: 0.75rem;
+			}
+
+			.links {
+				display: grid;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				gap: 8px;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			.links a {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 12px;
+				min-height: 48px;
+				padding: 10px 12px;
+				border: 1px solid var(--line);
+				font-size: 0.88rem;
+				font-weight: 650;
+				text-decoration: none;
+				transition: border-color 150ms ease, background-color 150ms ease, transform 150ms ease;
+			}
+
+			.links a::after {
+				color: var(--muted);
+				content: "↗";
+				font-size: 1rem;
+			}
+
+			.links a:hover {
+				transform: translateY(-2px);
+				border-color: var(--ink);
+				background: var(--green);
+			}
+
+			.footer {
+				display: flex;
+				justify-content: space-between;
+				gap: 1rem;
+				padding-block: 1rem 1.5rem;
+				border-top: 1px solid var(--line);
+				color: var(--muted);
+				font-size: 0.75rem;
+			}
+
+			@keyframes arrive {
+				from {
+					opacity: 0;
+					transform: translateY(10px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			@media (max-width: 650px) {
+				.page-shell {
+					width: min(100% - 28px, 1120px);
+				}
+
+				.masthead-note {
+					font-size: 0.7rem;
+				}
+
+				.intro {
+					grid-template-columns: 1fr;
+					gap: 1.4rem;
+				}
+
+				.quick-nav {
+					width: fit-content;
+				}
+
+				.lab {
+					grid-template-columns: 62px minmax(0, 1fr);
+				}
+
+				.lab-index {
+					padding: 0.5rem;
+				}
+
+				.lab-index span:first-child {
+					font-size: 1.5rem;
+				}
+
+				.lab-index span:last-child {
+					font-size: 0.58rem;
+				}
+
+				.links {
+					grid-template-columns: 1fr;
+				}
+
+				.footer {
+					flex-direction: column;
+					gap: 0.2rem;
+				}
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				*,
+				*::before,
+				*::after {
+					scroll-behavior: auto !important;
+					animation-duration: 0.01ms !important;
+					animation-iteration-count: 1 !important;
+					transition-duration: 0.01ms !important;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="page-shell">
+			<header class="masthead">
+				<a class="wordmark" href="#top" aria-label="Webtech startpagina">
+					<span class="mark" aria-hidden="true">W</span>
+					<span>Webtech / index</span>
+				</a>
+				<span class="masthead-note">Oefeningen &amp; experimenten</span>
+			</header>
+
+			<main id="top">
+				<section class="intro" aria-labelledby="page-title">
+					<div>
+						<p class="eyebrow">Werkmap · 2026</p>
+						<h1 id="page-title">Alles op<br />zijn plek.</h1>
+						<p class="intro-copy">Oefeningen en webpagina's, overzichtelijk gerangschikt per labo.</p>
+					</div>
+					<nav class="quick-nav" aria-label="Spring naar een labo">
+						<a href="#labo-01">01</a>
+						<a href="#labo-02">02</a>
+						<a href="#labo-03">03</a>
+					</nav>
+				</section>
+
+				<div class="lab-list">
+					<section class="lab" id="labo-01" aria-labelledby="labo-01-title">
+						<div class="lab-index" aria-hidden="true"><span>01</span><span>Labo</span></div>
+						<div class="lab-content">
+							<div class="lab-heading">
+								<h2 id="labo-01-title">Eerste stappen</h2>
+								<span class="count">04 pagina's</span>
+							</div>
+							<ul class="links">
+								<li><a href="labo-01/index.html">Startpagina</a></li>
+								<li><a href="labo-01/hobby.html">Mijn hobby</a></li>
+								<li><a href="labo-01/over-mij.html">Over mij</a></li>
+								<li><a href="labo-01/boodschappenlijst.html">Boodschappenlijst</a></li>
+							</ul>
+						</div>
+					</section>
+
+					<section class="lab" id="labo-02" aria-labelledby="labo-02-title">
+						<div class="lab-index" aria-hidden="true"><span>02</span><span>Labo</span></div>
+						<div class="lab-content">
+							<div class="lab-heading">
+								<h2 id="labo-02-title">CSS in actie</h2>
+								<span class="count">04 pagina's</span>
+							</div>
+							<ul class="links">
+								<li><a href="labo-02/cascade/index.html">De cascade</a></li>
+								<li><a href="labo-02/selectors/index.html">Selectors</a></li>
+								<li><a href="labo-02/selectors/nabouw/index.html">Selectors · nabouw</a></li>
+								<li><a href="labo-02/nabouw/index.html">Stroom · nabouw</a></li>
+							</ul>
+						</div>
+					</section>
+
+					<section class="lab" id="labo-03" aria-labelledby="labo-03-title">
+						<div class="lab-index" aria-hidden="true"><span>03</span><span>Labo</span></div>
+						<div class="lab-content">
+							<div class="lab-heading">
+								<h2 id="labo-03-title">Vorm &amp; kleur</h2>
+								<span class="count">05 pagina's</span>
+							</div>
+							<ul class="links">
+								<li><a href="labo-03/kleuren/index.html">Kleurenstalen</a></li>
+								<li><a href="labo-03/slogan/index.html">Slogan</a></li>
+								<li><a href="labo-03/tabblad/index.html">Tabblad</a></li>
+								<li><a href="labo-03/donut/index.html">Donut</a></li>
+								<li><a href="labo-03/landing/index.html">Landingspagina</a></li>
+							</ul>
+						</div>
+					</section>
+				</div>
+			</main>
+
+			<footer class="footer">
+				<span>Web Technology</span>
+				<span>3 labo's · 13 pagina's</span>
+			</footer>
+		</div>
+	</body>
+</html>
