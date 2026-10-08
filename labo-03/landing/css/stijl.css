@@ -2,7 +2,22 @@
 
 /* === tokens === */
 :root {
-
+--banner: #c8b8ff;
+--link: #5551ff;
+--hero:#779cee ;
 }
 
 /* === your rules === */
+
+.banner{
+    text-align: center;
+    background-color: var(--banner);
+    padding: 1rem;
+}
+
+
+
+ul{
+    text-align: right;
+}
+

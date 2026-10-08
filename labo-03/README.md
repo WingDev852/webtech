@@ -5,7 +5,9 @@ Naam: (jouw naam)
 ## 1. Kleurenstalen
 
 - Welke twee waarden uit de user agent stylesheet moest je op de lijst wegwerken, en waar las je ze af?
+*
 - Wat verandert er aan de banden als je het venster hoger maakt, en wat verandert er niet?
+*De hoogt van de band en ook de width veranderd mee als je jouw venster vergroot, maar de tekst erin blijft hetzelfde.
 
 ## 2. Slogan
 

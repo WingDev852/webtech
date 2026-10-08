@@ -2,7 +2,47 @@
 
 /* === tokens === */
 :root {
-
+--text: #282827;
+--geel:  #fccc00;
+--button-bg: black;
 }
 
 /* === your rules === */
+
+
+body{
+    height: 100vh;
+    text-align: center;
+    padding-top: 20rem;
+}
+
+h2{
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    margin: 0px;
+}
+span{
+    border-bottom: 0.5rem #fccc00 solid;
+    border-radius: 50%;
+    line-break: normal;
+    
+}
+
+p{
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 2rem;
+    margin: 0rem 10rem;
+}
+
+a{
+    text-align: center;
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+    background-color: var(--button-bg);
+    color: white;
+    text-decoration: none;
+}
