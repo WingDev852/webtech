@@ -11,6 +11,12 @@
 --rood:#cd2424;
 }
 
+body{
+    display: flex;
+    justify-content: center;
+    margin: 15vh;
+}
+
 .schilderij{
     background-color: var(--background);
     display: grid;
