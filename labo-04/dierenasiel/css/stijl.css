@@ -20,6 +20,21 @@ header{
     background-color: var(--green);
 }
 
+body{
+    background-color: var(--paper);
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+      background-color: #f7f4ec;
+    color: #2b2b2b;
+    font-family: Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+
+
+
 nav ul{
     display: flex;
     justify-content: space-between;
@@ -40,9 +55,27 @@ header a{
 ul a{
     color: var(--tekst);
     text-decoration: none;
+    background-color: var(--green);
+    padding: 1rem;
 }
 
-body{
-    background-color: var(--paper);
+.kaarten {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    list-style: none;
+    padding: 0;
 }
+
+.uitgelicht {
+    grid-column: span 2;
+}
+
+main {
+    width: 100%;
+    max-width: 60rem;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
 /* === your rules === */
