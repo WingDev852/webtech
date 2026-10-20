@@ -26,7 +26,7 @@ body{
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
-      background-color: #f7f4ec;
+    background-color: #f7f4ec;
     color: #2b2b2b;
     font-family: Verdana, sans-serif;
     line-height: 1.6;
@@ -50,6 +50,12 @@ header a{
     color: var(--accent);
     text-decoration: none; 
     font-size: 1rem;
+}
+
+.intro{
+margin-bottom: 1.5rem;
+color: var(--gedempt);
+
 }
 
 ul a{
@@ -107,4 +113,17 @@ main {
     border-radius: 0.25rem;
 }
 
+.beschrijving{
+    padding: 1rem 0rem 1rem 0rem;
+}
+
+footer{
+    background-color: var(--green);
+    color: var(--tekst);
+    padding: 1rem;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+
+}
 /* === your rules === */
