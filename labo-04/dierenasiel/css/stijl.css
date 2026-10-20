@@ -46,6 +46,9 @@ nav ul{
 
 }
 
+ul a:hover{
+    color: var(--accent);
+}
 header a{
     color: var(--accent);
     text-decoration: none; 
