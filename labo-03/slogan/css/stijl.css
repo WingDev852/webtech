@@ -2,47 +2,48 @@
 
 /* === tokens === */
 :root {
---text: #282827;
---geel:  #fccc00;
---button-bg: black;
+--tekst: #282827;
+--geel: #fccc00;
 }
 
-/* === your rules === */
-
-
 body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    text-align: center;
-    padding-top: 20rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--tekst);
 }
 
 h2{
-    display: inline-block;
-    width: 50%;
-    text-align: center;
-    font-size: 3rem;
-    padding-bottom: 2rem;
-    margin: 0px;
+text-align: center;
+display: block;
+font-size: 3rem;
+padding-bottom: 1rem;
 }
+
 span{
-    border-bottom: 0.5rem #fccc00 solid;
-    border-radius: 50%;
-    line-break: normal;
-    
+    border-bottom: 0.5rem solid#fccc00;
+    border-radius: 40%;
 }
 
 p{
-    display: inline-block;
-    text-align: center;
-    padding-bottom: 2rem;
-    margin: 0rem 10rem;
+text-align: center;
+padding-bottom: 1rem;
 }
 
 a{
-    text-align: center;
-    padding: 0.5rem 2rem;
-    border-radius: 1rem;
-    background-color: var(--button-bg);
+    display: block;
     color: white;
     text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: black;
+    border-radius: 0.75rem;
+    font-size: 0.75rem;
 }
+
+a:hover:focus{
+    background-color: darkgrey;
+}
+/* === your rules === */
