@@ -2,6 +2,16 @@
 
 /* === tokens: colours, fonts, sizes, and one duration and one curve (8.1) === */
 :root {
+--oppervlak: hsl(210 20% 97%);
+--inkt: hsl(215 30% 14%);
+--gedempt: hsl(215 10% 42%);
+--accent: hsl(215 70% 40%);
+--donker_accent: hsl(215 70% 30%);
+--lijn: hsl(210 15% 84%);
+--hoeken:  0.5rem;
+--duur: 200ms;
+--curve: ease-out;
+
 
 }
 
