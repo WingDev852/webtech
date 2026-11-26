@@ -14,9 +14,9 @@
 --wissel: 250ms;
 }
 
-.baan > * {
-    height: 25vh;
-    width: 12.5vw;
+.baan > *{
+    height: 50svh;
+    width: 50svw;
     animation-name: loper;
     animation-duration: var(--duur);
     animation-timing-function: var(--curve);
